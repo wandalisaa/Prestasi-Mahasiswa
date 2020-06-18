@@ -1,0 +1,53 @@
+<button class="btn btn-info shadow p-3 mb-5 fa fa-arrow-left mt-5 ml-5" style="border-radius :500px; margin-bottom: 0 important;" routerLink="/admin">  Back</button>
+<div class="registration-form" >
+  <H3 class="text-center" style="color: rgb(74, 74, 255);">Add Achievement</H3>
+  <form>
+      <div class="form-icon">
+        <span class="fa fa-trophy"></span>
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control item" id="Achievement" placeholder="Prestasi" name="prestasi" [(ngModel)]="prestasi">
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control item" id="Scholar" placeholder="Nama mahasiswa" name="mahasiswa" [(ngModel)]="mahasiswa">
+      </div>
+      <div class="form-group">
+          <input type="date" class="form-control item" id="Date" placeholder="Tanggal" name="tanggal" [(ngModel)]="tanggal">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control item" id="Place" placeholder="Nama Kegiatan/acara" name="tempat" [(ngModel)]="tempat">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control item" id="Place" placeholder="Foto url" name="tempat" [(ngModel)]="image">
+  </div>
+      <div class="form-group">
+        <select class="form-control item" id="exampleFormControlSelect1" aria-placeholder="Taraf" name="level" [(ngModel)]="level">
+          <option>National</option>
+          <option>Internasional</option>
+        </select>
+      </div>
+      <div class="form-group">
+          <textarea type="text" class="form-control item" id="Detail" placeholder="Detail" name="deskripsi" [(ngModel)]="deskripsi"></textarea>
+      </div>
+      <!-- <div class="custom-file mb-3">
+        <input type="file" class="custom-file-input item" id="customFileLang" lang="in">
+        <label class="custom-file-label" for="customFileLang">Select Scholar Profile </label>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input item" id="customFileLang" lang="in">
+        <label class="custom-file-label" for="customFileLang">Select Photo </label>
+      </div> -->
+      <div class="form-group">
+        <label *ngIf="warning" style="color: red;">{{warning}}</label>
+          <button type="submit" class="btn btn-block btn-success create-account" (click)="kirim()" >Publish</button>
+      </div>
+  </form>
+  <div class="social-media">
+      <h5>Share to social Media</h5>
+      <div class="social-icons">
+          <a href="#"><i class="fa fa-facebook" title="Facebook"></i></a>
+          <a href="#"><i class="fa fa-google" title="Google"></i></a>
+          <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
+      </div>
+  </div>
+</div>

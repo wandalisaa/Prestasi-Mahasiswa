@@ -1,0 +1,89 @@
+<!-- JUMBOTRON -->
+<div class="jumbotron jumtron jumbotron-fluid">
+  <div class="container ">
+    <div class="trans">
+      <h1 class="display-4 text-center" style="color: rgb(12, 42, 107);">Prestasi Mahasiswa</h1>
+    <p class="lead text-center">Together We Achieve More</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3 class=" text-center trans mt-5 mb-5" style="color: rgb(12, 42, 107);">Data Prestasi Mahasiswa</h3>
+<div class="container">
+  <form (ngSubmit)="search()">
+    <div class="row">
+      <div class="col-lg-2">
+        <input type="text" class="form-control item" id="Achievement" placeholder="Cari" name="key" [(ngModel)]="key">
+        <label *ngIf="warning" style="color: red;">{{warning}}</label>
+      </div>
+      <div class="col-lg-2">
+        <button class="btn btn-info ml-0" type="submit" >Submit</button>
+      </div>
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary disabled">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Urut Berdasarkan
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="options" id="option2" autocomplete="off" (click)="sortbyDate()"> Tanggal
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="options" id="option3" autocomplete="off" (click)="sortbyScale()"> Taraf
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+</div>
+  </div>
+
+<!-- MAHASISWA BERPRESTASI TAHUN INI -->
+<div class="limiter">
+  <div class="container-table100 pb-1" style="background-color: white;">
+    <div class="wrap-table100">
+      <div class="table100 ver1">
+        <table data-vertable="ver1">
+          <thead>
+            <tr class="row100 head">
+              <th class="column100 column2" data-column="column2">Prestasi</th>
+              <th class="column100 column3" data-column="column3">Nama Mahasiswa</th>
+              <th class="column100 column4" data-column="column4">Tanggal</th>
+              <th class="column100 column5" data-column="column5">Taraf</th>
+              <th class="column100 column6" data-column="column6">Nama Kegiatan/acara</th>
+              <th class="column100 column7" data-column="column7">Hapus</th>
+              <th class="column100 column8" data-column="column8">Update</th>
+              <th class="column100 column8" data-column="column8">Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr class="row100" *ngFor="let pres of prestasilist">
+                <td class="column100 column1" data-column="column1" [routerLink]="['/post',pres._id]" routerLinkActive="active">
+                  {{pres.prestasi}}</td>
+                <td class="column100 column2" data-column="column2">{{pres.mahasiswa}}</td>
+                <td class="column100 column3" data-column="column3">{{pres.tanggal}}</td>
+                <td class="column100 column4" data-column="column4">{{pres.level}}</td>
+                <td class="column100 column5" data-column="column5">{{pres.tempat}}</td>
+                <td class="column100 column6">
+                  <input type="hidden" #id value="{{pres._id}}">
+                  <button class="btn btn-outline-secondary" (click)="Delete(id.value)">Hapus</button>
+                </td>
+                <td class="column100 column7" data-column="column7">
+                  <input type="hidden" #id value="{{pres._id}}">
+                  <button class="btn btn-info" (click)="doupdate(id.value)" >Update</button>
+                </td>
+                <td class="column100 column7" data-column="column7">
+                  <input type="hidden" #id value="{{pres._id}}">
+                  <button class="btn btn-primary" [routerLink]="['/post',pres._id]" routerLinkActive="active" >Detail</button>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-outline-primary btn-lg center p-2 mt-4" routerLink="/new" routerLinkActive="active">Tambahkan Prestasi</button>
