@@ -15,7 +15,8 @@
       <ul class="timeline">
         <div *ngFor="let new of latest">
           <li class="mb-2">
-            <a target="_blank" href="https://www.totoprayogo.com/#">{{new.prestasi}}</a>
+            <a  [routerLink]="['/post',new._id]"
+            routerLinkActive="active">{{new.prestasi}}</a>
             <a href="#" class="float-right">{{new.tanggal}}</a>
             <p>Oleh {{new.mahasiswa}}, pada {{new.tempat}} .
             </p>

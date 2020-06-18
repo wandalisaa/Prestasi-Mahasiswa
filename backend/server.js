@@ -126,7 +126,7 @@ app.put('/api/prestasi/:id', (req, res, next) => {
     if (error) {
       console.log(error)
     }else {
-      console.log('Update Success:' + data)
+      console.log('Update Success')
       res.send('Selesai')
     }
   })
