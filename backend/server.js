@@ -75,7 +75,8 @@ app.get('/api/prestasi/scale', async (req,res) => {
 app.get('/api/prestasi/search/:key',(req,res) => {
   console.log(req.params.key);
   let key = req.params.key;
-  Prestasi.find({$or:[{prestasi: { $regex: '.*' + key + '.*' }}, {mahasiswa: { $regex: '.*' + key + '.*' }}, {tempat: { $regex: '.*' + key + '.*' }} ] })
+  Prestasi.find({$or:[{prestasi: { $regex: '.*' + key + '.*' }},
+   {mahasiswa: { $regex: '.*' + key + '.*' }}, {tempat: { $regex: '.*' + key + '.*' }}, {level: { $regex: '.*' + key + '.*' }} ] }, )
   .exec(function(err, data){
     if (err){
       console.log("error get data")

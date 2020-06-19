@@ -1,6 +1,6 @@
 <button class="btn btn-info shadow p-3 mb-5 fa fa-arrow-left mt-5 ml-5" style="border-radius :500px; margin-bottom: 0 important;" routerLink="/admin">  Back</button>
 <div class="registration-form" >
-  <H3 class="text-center" style="color: rgb(74, 74, 255);">Add Achievement</H3>
+  <H3 class="text-center" style="color: rgb(74, 74, 255);">Tambahkan Prestasi</H3>
   <form>
       <div class="form-icon">
         <span class="fa fa-trophy"></span>
@@ -22,8 +22,16 @@
   </div>
       <div class="form-group">
         <select class="form-control item" id="exampleFormControlSelect1" aria-placeholder="Taraf" name="level" [(ngModel)]="level">
-          <option>National</option>
-          <option>Internasional</option>
+          <option>FMIPA</option>
+          <option>Fasilkom-TI</option>
+          <option>FK</option>
+          <option>FKG</option>
+          <option>FH</option>
+          <option>FKM</option>
+          <option>FISIP</option>
+          <option>FIB</option>
+          <option>FEB</option>
+          <option>FT</option>
         </select>
       </div>
       <div class="form-group">
@@ -42,12 +50,4 @@
           <button type="submit" class="btn btn-block btn-success create-account" (click)="kirim()" >Publish</button>
       </div>
   </form>
-  <div class="social-media">
-      <h5>Share to social Media</h5>
-      <div class="social-icons">
-          <a href="#"><i class="fa fa-facebook" title="Facebook"></i></a>
-          <a href="#"><i class="fa fa-google" title="Google"></i></a>
-          <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
-      </div>
-  </div>
 </div>

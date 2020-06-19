@@ -355,7 +355,7 @@ color:#fff;
   -o-transition: height 2s ease-out, padding-top 2s ease-out, filter 2s ease-out;
   transition: height 2s ease-out, padding-top 2s ease-out, filter 2s ease-out;
 }
-.jumtron:hover {
+/* .jumtron:hover {
   background: url("https://images.pexels.com/photos/670625/pexels-photo-670625.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   background-position: 70%;
   background-repeat: no-repeat;
@@ -365,7 +365,7 @@ color:#fff;
   transition: 2s;
   height: 600px;
   padding-top: 200px;
-}
+} */
 
 .center {
   text-align: center;

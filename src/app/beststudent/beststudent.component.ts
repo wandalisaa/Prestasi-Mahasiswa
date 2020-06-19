@@ -27,7 +27,7 @@ export class BeststudentComponent implements OnInit {
   }
 
   Delete(id: string) {
-    if (confirm('Are you sure to delete this record')) {
+    if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
       console.log('http://localhost:3000/api/prestasi/' + id);
       this.http.delete('http://localhost:3000/api/prestasi/' + id).toPromise();
       // tslint:disable-next-line: deprecation

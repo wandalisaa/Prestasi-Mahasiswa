@@ -33,7 +33,6 @@ export class UpdateComponent implements OnInit, OnDestroy {
    });
   }
   kirim(data){
-
     console.log('http://localhost:3000/api/prestasi/' + this.prestasi._id);
     this.http.put('http://localhost:3000/api/prestasi/' + this.prestasi._id , data).toPromise();
     alert('Success');

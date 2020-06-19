@@ -409,3 +409,6 @@ ul.timeline > li:before {
 a.card-text{
   color: black;
 }
+.text-info:hover{
+  background-color: #e0ffff;
+}

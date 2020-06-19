@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-new',
@@ -8,7 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NewComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private http: HttpClient) { }
 
   mahasiswa = '';
   prestasi = '';
@@ -20,6 +24,12 @@ export class NewComponent implements OnInit {
   warning = '';
 
   ngOnInit(): void {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0);
+  });
     }
 
   kirim(){
@@ -36,17 +46,17 @@ export class NewComponent implements OnInit {
 
   validation(){
     if (!this.prestasi){
-      this.warning = 'Please input Achievement';
+      this.warning = 'Tambahkan input prestasi';
     }else if (!this.tanggal){
-      this.warning = 'Please input Date';
+      this.warning = 'Tambahkan tanggal';
     }else if (!this.mahasiswa){
-      this.warning = 'Please input Name of Student';
+      this.warning = 'Tambahkan nama mahasiswa';
     }else if (!this.deskripsi){
-      this.warning = 'Please input Detail';
+      this.warning = 'Tambahkan deskripsi';
     }else if (!this.level){
-      this.warning = 'Please input Scale';
+      this.warning = 'Tambahkan Taraf prestasi';
     }else if (!this.tempat){
-      this.warning = 'Please input Place';
+      this.warning = 'Tambahkan nama kegiatan';
     }else{
       this.warning = '';
     }
